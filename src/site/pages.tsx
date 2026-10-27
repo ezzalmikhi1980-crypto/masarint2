@@ -136,11 +136,11 @@ export function Footer({ lang }: { lang: Language }) {
             <a className="footer-link" href="mailto:info@customerservice.com" data-testid="link-footer-email">info@customerservice.com</a>
             <a className="footer-link" href="mailto:almasar.logistics1@gmail.com" data-testid="link-footer-email-2">almasar.logistics1@gmail.com</a>
             <a className="footer-link" href="tel:+962798298888" dir="ltr" style={{ textAlign: lang === 'ar' ? 'right' : undefined }} data-testid="link-footer-phone">+962798298888</a>
-            <span className="footer-text">{lang === 'en' ? 'Mecca Street · Amman · Jordan' : 'شارع مكة · عمّان · الأردن'}</span>
+            <span className="footer-text">{lang === 'en' ? 'Amman · Jordan · Global' : 'عمّان · الأردن · حول العالم'}</span>
           </div>
           <div>
             <div className="footer-heading">{lang === 'en' ? 'Operating hours' : 'ساعات العمل'}</div>
-            <span className="footer-text">{lang === 'en' ? 'Saturday — Thursday' : 'السبت — الخميس'}</span>
+            <span className="footer-text">{lang === 'en' ? 'Sunday — Thursday' : 'الأحد — الخميس'}</span>
             <span className="footer-text">08:00 — 18:00 (GMT+3)</span>
             <span className="footer-text">{lang === 'en' ? '24/7 shipment desk' : 'مكتب الشحن متاح 24/7'}</span>
           </div>
@@ -162,43 +162,6 @@ function Cta({ lang }: { lang: Language }) {
         <Link href="/contact" className="button-dark button-primary" data-testid="link-cta-contact">{lang === 'en' ? 'Get a quote' : 'احصل على عرض سعر'} <ArrowUpRight size={16} className="arrow-icon" /></Link>
       </div>
     </section>
-  );
-}
-
-function MasarMark() {
-  const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const route = 'M60 196 C 210 246, 320 150, 450 196 S 700 246, 840 168';
-  return (
-    <div className="masar-mark" dir="ltr" aria-label="MASAR مسار" role="img">
-      <svg viewBox="0 0 900 270" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-        <defs>
-          <linearGradient id="masar-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#12294d" />
-            <stop offset="1" stopColor="#07142a" />
-          </linearGradient>
-          <linearGradient id="masar-route" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stopColor="#a77d1c" />
-            <stop offset="1" stopColor="#e7c76a" />
-          </linearGradient>
-        </defs>
-        <text x="450" y="150" textAnchor="middle" className="masar-letters" fill="url(#masar-fill)">MASAR</text>
-        <text x="450" y="150" textAnchor="middle" className="masar-letters masar-outline" fill="none">MASAR</text>
-        <path d={route} className="masar-route" fill="none" stroke="url(#masar-route)" strokeWidth="3" strokeLinecap="round" strokeDasharray="2 11" />
-        <circle cx="60" cy="196" r="7" fill="#d2a337" />
-        <circle cx="60" cy="196" r="14" fill="none" stroke="#d2a337" strokeOpacity=".4" />
-        <g transform="translate(840 168)">
-          <circle r="7" fill="#d2a337" />
-          <circle r="14" fill="none" stroke="#d2a337" strokeOpacity=".4" className="masar-pulse" />
-        </g>
-        {reduceMotion ? null : (
-          <g>
-            <path d="M-13 -7 L14 0 L-13 7 L-8 0 Z" fill="#07142a" stroke="#d2a337" strokeWidth="1.5" strokeLinejoin="round" />
-            <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" path={route} />
-          </g>
-        )}
-        <text x="450" y="262" textAnchor="middle" className="masar-arabic" fill="#a77d1c">مسار</text>
-      </svg>
-    </div>
   );
 }
 
@@ -268,9 +231,6 @@ export function Home({ lang }: { lang: Language }) {
 
       <section className="section section-light">
         <div className="container-wide">
-          <Reveal>
-            <MasarMark />
-          </Reveal>
           <Reveal>
             <div className="section-kicker">{lang === 'en' ? 'A wider view' : 'رؤية أوسع'}</div>
             <div className="image-card image-card-wide image-card-port">
@@ -463,11 +423,11 @@ export function Contact({ lang }: { lang: Language }) {
               <div className="section-kicker">{lang === 'en' ? 'The human line' : 'خط التواصل المباشر'}</div>
               <h2 className="section-title">{lang === 'en' ? <>Good routes<br /><em>start with a question.</em></> : <>المسارات الجيدة<br /><em>تبدأ بسؤال.</em></>}</h2>
               <div className="contact-card">
-                <div className="contact-item"><MapPin size={19} /><div><strong>{lang === 'en' ? 'Amman office' : 'مكتب عمّان'}</strong><span>{lang === 'en' ? 'Mecca Street, Amman, Jordan' : 'شارع مكة، عمّان، الأردن'}</span></div></div>
+                <div className="contact-item"><MapPin size={19} /><div><strong>{lang === 'en' ? 'Amman office' : 'مكتب عمّان'}</strong><span>{lang === 'en' ? 'King Abdullah II Street, Amman, Jordan' : 'شارع الملك عبدالله الثاني، عمّان، الأردن'}</span></div></div>
                 <div className="contact-item"><Mail size={19} /><div><strong>{lang === 'en' ? 'Write to us' : 'راسلنا'}</strong><a href="mailto:info@customerservice.com" data-testid="link-contact-email">info@customerservice.com</a><a href="mailto:almasar.logistics1@gmail.com" data-testid="link-contact-email-2" style={{ display: 'block' }}>almasar.logistics1@gmail.com</a></div></div>
                 <div className="contact-item"><Phone size={19} /><div><strong>{lang === 'en' ? 'Call us' : 'اتصل بنا'}</strong><a href="tel:+962798298888" dir="ltr" style={{ display: 'block', textAlign: lang === 'ar' ? 'right' : undefined }} data-testid="link-contact-phone">+962798298888</a></div></div>
                 <div className="contact-item"><Clock3 size={19} /><div><strong>{lang === 'en' ? 'Shipment desk' : 'مكتب متابعة الشحنات'}</strong><span>{lang === 'en' ? 'Available 24 hours, 7 days a week' : 'متاح 24 ساعة، 7 أيام في الأسبوع'}</span></div></div>
-                <div className="contact-item"><Clock3 size={19} /><div><strong>{lang === 'en' ? 'Office hours' : 'ساعات العمل'}</strong><span>{lang === 'en' ? 'Saturday — Thursday, 08:00 — 18:00 Jordan time (GMT+3)' : 'السبت — الخميس، 08:00 — 18:00 بتوقيت الأردن (GMT+3)'}</span></div></div>
+                <div className="contact-item"><Clock3 size={19} /><div><strong>{lang === 'en' ? 'Office hours' : 'ساعات العمل'}</strong><span>{lang === 'en' ? 'Sunday — Thursday, 08:00 — 18:00 Jordan time (GMT+3)' : 'الأحد — الخميس، 08:00 — 18:00 بتوقيت الأردن (GMT+3)'}</span></div></div>
               </div>
             </div>
           </Reveal>
